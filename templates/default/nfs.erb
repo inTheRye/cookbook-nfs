@@ -3,12 +3,12 @@
 STATD_PORT=<%= node["nfs"]["port"]["statd"] %>
 STATD_OUTGOING_PORT=<%= node["nfs"]["port"]["statd_out"] %>
 MOUNTD_PORT=<%= node["nfs"]["port"]["mountd"] %>
-LOCKD_UDPPORT=<%= node["nfs"]["port"]["lockd"] %>
-LOCKD_TCPPORT=<%= node["nfs"]["port"]["lockd"] %>
+LOCKD_UDPPORT=<%= node["nfs"]["port"]["lockd_udp"] %>
+LOCKD_TCPPORT=<%= node["nfs"]["port"]["lockd_tcp"] %>
 <% unless node["nfs"]["v2"].nil? -%>
 MOUNTD_NFS_V2=<%= node["nfs"]["v2"] %>
 <% end -%>
 <% unless node["nfs"]["v3"].nil? -%>
 MOUNTD_NFS_V3=<%= node["nfs"]["v3"] %>
 <% end -%>
-RQUOTAD="no"
+RQUOTAD=<%= node["nfs"]["port"]["rquotad"] %>
